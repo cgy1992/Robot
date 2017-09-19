@@ -6,8 +6,6 @@ import pyaudio
 # 引入Speech SDK
 from aip import AipSpeech
 
-
-
 def speak(word):
     spk = win32com.client.Dispatch("SAPI.SpVoice")
     spk.Speak(word)

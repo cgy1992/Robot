@@ -1,13 +1,20 @@
+'''
+This is the record progrem.
+'''
 import pyaudio
 import wave
 
 def my_record():
+    '''
+    Save the voice in the "output.wav"
+    :return: null
+    '''
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
     RATE = 16000
     RECORD_SECONDS = 3
-    WAVE_OUTPUT_FILENAME = "output.wav"
+    WAVE_OUTPUT_FILENAME = "voice/output1.wav"
 
     p = pyaudio.PyAudio()
 
@@ -37,3 +44,6 @@ def my_record():
     wf.setframerate(RATE)
     wf.writeframes(b''.join(frames))
     wf.close()
+
+if __name__ == '__main__':
+    my_record()
